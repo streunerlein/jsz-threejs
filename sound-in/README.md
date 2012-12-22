@@ -1,10 +1,10 @@
-# Dancing Particles - file input
+#Dancing Particles - file input
 
 This example shows particles arranged in a big sphere where each particle reacts on the amplitude of a certain frequency in a given audio track.
 
 I took the initial stuff like creating a renderer, scene and camera again into an own function `init` and the animation loop into `animate`.
 
-## Particles arranged as big sphere
+##Particles arranged as big sphere
 
 The `addParticles` function adds the particles to the scene, arranged as a sphere. 
 
@@ -64,7 +64,7 @@ This is what we're doing in the loop where we create the particles. For every pa
 	}
 ```
 
-## Adding the sound file and read audio frequencies
+##Adding the sound file and read audio frequencies
 
 This section is packed into the function `initSound`. For achieving the effect we want, what we do is:
 
@@ -76,7 +76,7 @@ This section is packed into the function `initSound`. For achieving the effect w
    request.responseType = 'arraybuffer';
    ```
 
- * decode it comes in (from binary) and use it directly in an audio context where we can assign an analyzer to that will give us frequency data
+ * decode it as comes in (from binary) and use it directly in an audio context where we can assign an analyzer to that will give us frequency data
 
    ```javascript
    request.onload = function() {
