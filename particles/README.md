@@ -36,7 +36,7 @@ function addParticles() {
 		particles.vertices.push(v);
 	}
 
-	particleSystem = new THREE.ParticleSystem(particles, mat);
+	var particleSystem = new THREE.ParticleSystem(particles, mat);
 
 	scene.add(particleSystem);
 }
