@@ -1,5 +1,5 @@
 
-var renderer, scene, camera, controls, ground, clock, pCount = 0, particleSystem = null;
+var renderer, scene, camera, controls, clock, pCount = 0, particleSystem = null;
 var renderhooks = [];
 
 init();
@@ -37,23 +37,15 @@ function initMic() {
 				var average = sum / bin_size;
 
 				var particle = particleSystem.geometry.vertices[i];
-				particle.magnitude = average / 256;
+				var magnitude = average / 256;
+
+				var v = particle.orgposition.clone();
+
+				v.multiplyScalar(1 + magnitude);
+				particle.x = v.x;
+				particle.y = v.y;
+				particle.z = v.z;
 			}
-
-
-			var particles = particleSystem.geometry.vertices;
-
-			for (var i = 0; i < particles.length; i++) {
-				var p = particles[i];
-
-				var v = p.orgposition.clone();
-				v.multiplyScalar(1 + p.magnitude);
-				p.x = v.x;
-				p.y = v.y;
-				p.z = v.z;
-			}
-
-			particleSystem.geometry.__dirtyVertices = true;
 		});
 	}
 }
@@ -70,7 +62,7 @@ function addParticles() {
 			transparent: true
 		});
 
-	var template = new THREE.SphereGeometry(radius, 32, 32);
+	var template = new THREE.SphereGeometry(radius, Math.sqrt(particleCount), Math.sqrt(particleCount));
 
 	for (var i = 0; i < particleCount; i++) {
 		var v = template.vertices[i].clone();
@@ -84,8 +76,6 @@ function addParticles() {
 
 	particleSystem = new THREE.ParticleSystem(particles, mat);
 	particleSystem.sortParticles = true;
-
-	particleSystem.radius = radius;
 
 	scene.add(particleSystem);
 

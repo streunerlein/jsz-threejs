@@ -1,5 +1,5 @@
 
-var renderer, scene, camera, controls, ground, clock, pCount = 0, particleSystem = null;
+var renderer, scene, camera, controls, clock, pCount = 0, particleSystem = null;
 var renderhooks = [];
 
 init();
