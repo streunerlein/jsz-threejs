@@ -1,6 +1,5 @@
 
-var renderer, scene, camera, controls, ground, clock, pCount = 0, particleSystem = null;
-var renderhooks = [];
+var renderer, scene, camera, controls;
 
 init();
 animate();
@@ -35,7 +34,7 @@ function addParticles() {
 		particles.vertices.push(v);
 	}
 
-	particleSystem = new THREE.ParticleSystem(particles, mat);
+	var particleSystem = new THREE.ParticleSystem(particles, mat);
 
 	scene.add(particleSystem);
 }
@@ -48,35 +47,22 @@ function init() {
 
 	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
 	camera.position.y = 200;
+	camera.position.z = -1000;
 
 	scene = new THREE.Scene();
 
-	addParticles();
-
 	controls = new THREE.OrbitControls(camera, renderer.domElement);
-	clock = new THREE.Clock();
-
-	camera.position.z = -1000;
 
 	controls.movementSpeed = 2500;
 	controls.rollSpeed = Math.PI / 6;
 	controls.autoForward = false;
-
-	scene.fog = new THREE.Fog( 0x000000, 1500, 5000 );
-	scene.fog.color.setHSV( 0.51, 0.6, 0.025 );
 }
 
 
 function animate() {
 	requestAnimationFrame(animate);
 
-	TWEEN.update();
-
-	controls.update(clock.getDelta());
-
-	for (var i = 0; i < renderhooks.length; i++) {
-		renderhooks[i]();
-	}
+	controls.update();
 
 	renderer.render(scene, camera);
 }
