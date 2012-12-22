@@ -7,7 +7,6 @@ animate();
 addParticles();
 
 function addParticles() {
-	var radius = 500;
 	var particleCount = 1024,
 		particles = new THREE.Geometry(),
 		mat = new THREE.ParticleBasicMaterial({
@@ -18,29 +17,27 @@ function addParticles() {
 			transparent: true
 		});
 
-	var template = new THREE.PlaneGeometry(1024, 1024, 31, 32);
+	// calculations for positioning particles in a square/rectangle
+	var sideLength = Math.floor(Math.sqrt(particleCount)),
+		d = 30,
+		center = d * sideLength / 2;
 
-	particles.colors = [];
+	for (var i = 0, x, y, v; i < particleCount; i++) {
+		x = i % sideLength * d - center;
+		y = Math.floor(i / sideLength) * d - center;
 
-	for (var i = 0; i < particleCount; i++) {
-		var v = template.vertices[i].clone();
-		particles.vertices.push(template.vertices[i]);
-		particles.vertices[i].orgposition = new THREE.Vector3(
-			v.x,
-			v.y,
-			v.z
+		v = new THREE.Vector3(
+			x,
+			y,
+			0
 		);
+
+		particles.vertices.push(v);
 	}
 
 	particleSystem = new THREE.ParticleSystem(particles, mat);
-	particleSystem.sortParticles = true;
-	particleSystem.vertexColors = true;
-
-	particleSystem.radius = radius;
 
 	scene.add(particleSystem);
-
-	pCount = particleCount;
 }
 
 function init() {
