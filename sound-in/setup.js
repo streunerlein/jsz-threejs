@@ -10,7 +10,7 @@ function initMic() {
 	var context = new webkitAudioContext();
 	var analyser = context.createAnalyser();
 	var soundBuffer = null;
-	var source = null
+	var source = null;
 
 	function loadSound(url) {
 		var request = new XMLHttpRequest();
@@ -28,11 +28,11 @@ function initMic() {
 				source.noteOn(0);
 				startaudio();
 			}, function() { console.log(request); });
-		}
+		};
 		request.send();
 	}
 
-	loadSound('klangkarussel.ogg');
+	loadSound('sounds/klangkarussel.ogg');
 
 	function startaudio() {
 

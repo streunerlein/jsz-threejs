@@ -13,7 +13,7 @@ function addParticles() {
 		mat = new THREE.ParticleBasicMaterial({
 			color:0xffffff,
 			size: 20,
-			map: THREE.ImageUtils.loadTexture('../end/textures/ParticleSmoke.png'),
+			map: THREE.ImageUtils.loadTexture('textures/particle.png'),
 			blending: THREE.AdditiveBlending,
 			transparent: true
 		});

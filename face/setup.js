@@ -14,7 +14,7 @@ function addParticles() {
 			color:0xffffff,
 			vertexColors: true,
 			size: 20,
-			map: THREE.ImageUtils.loadTexture('../mic-in/textures/particle.png'),
+			map: THREE.ImageUtils.loadTexture('textures/particle.png'),
 			blending: THREE.AdditiveBlending,
 			transparent: true
 		});
