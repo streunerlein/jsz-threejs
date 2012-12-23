@@ -110,8 +110,12 @@ This is straightforward, look at the `addCam` function.
 		c.b = pixels[i+2] / 255;
   ```
 
-  What's left? The positioning: we set the z-position of the particle to the average brightness of the r, g and b components of the pixel:
+  What's left? The positioning: we set the z-position of the particle to the average brightness of the `r`, `g` and `b` components of the pixel:
 
   ```javascript
   	particleSystem.geometry.vertices[vi].z = -(pixels[i] + pixels[i+2] + pixels[i+3]) / 3 * 2;
   ```
+
+ * Final note: `__dirtyVertices`/`needsUpdate`
+
+   There is no need to tell the `particleSystem` about the changes anymore - with the newest revisions of Three.js they refresh geometry/colors by default.
