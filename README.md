@@ -6,6 +6,7 @@ As I did all of the examples in the afternoons before the talk, I refactored som
 
  * [JSZurich - Christmas T(h)ree.js on Techup](http://techup.ch/911/jszurich-christmas-t-h-ree-js)
  * [Watch the talk online [link to come]](http://google.com)
+ * [See all the examples online](http://streunerlein.github.com/jsz-threejs/)
 
 ##Examples
 
