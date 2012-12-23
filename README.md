@@ -89,4 +89,4 @@ Then, press enter.
 
 ##Running examples on your machine
 
-Is perfectly possible. Make sure you have some kind of server running for that (do not open them directly from your file system). In many of the examples, AJAX requests have to be made which will fail. So put the files in your apache webroot, Express/node.js public folder, ...
+Is perfectly possible. Make sure you have some kind of server running for that (do not open them directly from your file system). In most of the examples, AJAX requests have to be done which will fail. So put the files in your apache webroot, Express/node.js public folder, ... and load them from there.
