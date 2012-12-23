@@ -90,3 +90,28 @@ Then, press enter.
 ##Running examples on your machine
 
 Is perfectly possible. Make sure you have some kind of server running for that (do not open them directly from your file system). In most of the examples, AJAX requests have to be done which will fail. So put the files in your apache webroot, Express/node.js public folder, ... and load them from there.
+
+##Links & Resources
+
+ * [Three.js Repository on Github](https://github.com/mrdoob/three.js/)
+ * [Three.js API Documentation](http://mrdoob.github.com/three.js/docs)
+ * [Chrome Experiments](http://www.chromeexperiments.com/)
+ * [Three.js Demo Selection](http://mrdoob.github.com/three.js/)
+
+Make sure to check out the examples in the examples folder of the Three.js-repository.
+
+###Third-party examples (in order of appereance in the talk)
+
+ * http://hexgl.bkcore.com/ Race game
+ * http://workshop.chromeexperiments.com/stars/ Solar system
+ * http://data-arts.appspot.com/globe/ Population globe
+ * http://www.zygotebody.com/ Zygote 3D Body
+ * http://carvisualizer.plus360degrees.com/threejs/ Car with reflections
+ * http://lights.elliegoulding.com/ Ellie Goulding WebGL Music video
+ * http://superfad.com/missioncontrol/traffic/ Globe with particles on it
+ * http://mrdoob.github.com/three.js/examples/webgl_materials_bumpmap_skin.html Lee Perry-Smith 3D head with displacement map
+ * http://mrdoob.com/lab/javascript/webgl/kinect/ Kinect data in WebGL
+ * http://neave.github.com/face-detection/ by neave Face detection with silly png
+ * http://neave.com/webcam/html5/ Webcamtoys by neave (Instragram-Killer in HTML5 ;))
+
+
