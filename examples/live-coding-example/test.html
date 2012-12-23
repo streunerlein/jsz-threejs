@@ -1,0 +1,140 @@
+<html>
+	<head>
+
+		<script src="../js/three.min.js"></script>
+		<script src="../js/tween.min.js"></script>
+		<script src="../js/TrackballControls.js"></script>
+		<style type="text/css">
+			body {
+				background-color:black;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			var renderer;
+
+			renderer = new THREE.WebGLRenderer({
+				antialias: true
+			});
+
+			renderer.setSize(window.innerWidth, window.innerHeight);
+
+			document.body.appendChild(renderer.domElement);
+
+			var camera;
+
+			camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+
+			camera.position.z = 2000;
+
+			var scene;
+
+			scene = new THREE.Scene();
+
+			var controls = new THREE.TrackballControls(camera, renderer.domElement);
+
+			var objs = [];
+			var geometry = new THREE.SphereGeometry(50, 20, 20);
+			var material = new THREE.MeshPhongMaterial({color: 0xff0000});
+			for (var x = -5; x < 5; x++) {
+				for (var y = -5; y < 5; y++) {
+					for (var z = -5; z < 5; z++) {
+						// add an object
+						var obj = new THREE.Mesh(geometry.clone(), material);
+
+						obj.position = {
+							x: x * 200,
+							y: y * 200,
+							z: z * 200
+						};
+
+						obj.orgpos = {x: obj.position.x, y: obj.position.y, z: obj.position.z};
+
+						scene.add(obj);
+						objs.push(obj);
+					}
+				}
+			}
+
+			var animcount = 0;
+
+			document.onclick = function() {
+				switch (animcount) {
+					case 0:
+						// all to y 0
+						for (var i = 0; i < objs.length; i++) {
+							var o = objs[i];
+							var cc = i;
+							new TWEEN.Tween(o.position)
+								.to({x: o.orgpos.x, y: 0, z: o.orgpos.z}, 2000)
+								.easing(TWEEN.Easing.Elastic.InOut)
+								.start();
+						}
+						break;
+					case 1:
+						// all to x 0
+						for (var i = 0; i < objs.length; i++) {
+							var o = objs[i];
+							new TWEEN.Tween(o.position)
+								.to({x: 0, y: o.orgpos.y, z: o.orgpos.z}, 2000)
+								.easing(TWEEN.Easing.Elastic.InOut)
+								.start();
+						}
+
+						break;
+					case 2: 
+						// all to z 0
+						for (var i = 0; i < objs.length; i++) {
+							var o = objs[i];
+							new TWEEN.Tween(o.position)
+								.to({x: o.orgpos.x, y: o.orgpos.y, z: 0}, 2000)
+								.easing(TWEEN.Easing.Elastic.InOut)
+								.start();
+						}
+						break;
+
+					case 3: 
+						// reset
+						for (var i = 0; i < objs.length; i++) {
+							var o = objs[i];
+							new TWEEN.Tween(o.position)
+								.to(o.orgpos, 2000)
+								.easing(TWEEN.Easing.Elastic.InOut)
+								.start();
+						}
+						break;
+				}
+
+				animcount++;
+				if (animcount > 3) animcount = 0;
+			}
+
+			var count = 0;
+
+			var l = new THREE.PointLight();
+			scene.add(l);
+
+			function animate() {
+				requestAnimationFrame(animate);
+
+				TWEEN.update();
+				controls.update();
+
+				count++;
+
+				renderer.render(scene, camera);
+			}
+
+			setInterval(function() {
+				console.log(count);
+				count = 0;
+			}, 1000);
+
+			animate();
+
+		</script>
+
+	</body>
+</html>
