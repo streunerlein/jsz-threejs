@@ -1,6 +1,6 @@
 #JSZurich - Three.JS
 
-This repository holds example code and explanation for the examples shown in the JSZurich talk on 18. December 2012 - **Christmas T(h)ree.js**.
+This repository holds example code and explanation for the examples shown in the **[JSZurich talk on 18. December 2012 - Christmas T(h)ree.js](http://techup.ch/911/jszurich-christmas-t-h-ree-js)**.
 
 As I did all of the examples in the afternoons before the talk, I refactored some of the code to clean it up and make it more understandable (and not to embarrass myself). The code examples are not focussed on performance or elegance in any kind and provided on an as-is basis.
 
@@ -22,6 +22,8 @@ For some of the examples you have to activate `getUserMedia`, means Webcam-acces
 
 ![Live Coding Example](http://streunerlein.github.com/jsz-threejs/examples/live-coding-example/preview.jpg)
 
+[See live demo](http://streunerlein.github.com/jsz-threejs/examples/live-coding-example/test.html)
+
 This is the live coding example how it was made during the talk. Covered in this is the basic setup, render loops and creating objects. Also, animation!
 
 **Hint:** Use your mouse to move the object (drag), click to trigger animation.
@@ -30,13 +32,17 @@ This is the live coding example how it was made during the talk. Covered in this
 
 ![Particle Basics](http://streunerlein.github.com/jsz-threejs/examples/particles/preview.jpg)
 
+[See live demo](http://streunerlein.github.com/jsz-threejs/examples/particles/index.html)
+
 Introduction to particles, create them and render.
 
 **Hint:** Use your mouse to move the object (drag).
 
 ###Dancing particles with audio file input (`sound-in/`)
 
-![Particle Basics](http://streunerlein.github.com/jsz-threejs/examples/sound-in/preview.jpg)
+![Dancing particles](http://streunerlein.github.com/jsz-threejs/examples/sound-in/preview.jpg)
+
+[See live demo](http://streunerlein.github.com/jsz-threejs/examples/sound-in/index.html)
 
 Audio-API combined with particle movement.
 
@@ -44,7 +50,9 @@ Audio-API combined with particle movement.
 
 ###Dancing particles with microphone input (`mic-in/`)
 
-![Particle Basics](http://streunerlein.github.com/jsz-threejs/examples/sound-in/preview.jpg)
+![Dancing particles 2](http://streunerlein.github.com/jsz-threejs/examples/sound-in/preview.jpg)
+
+[See live demo](http://streunerlein.github.com/jsz-threejs/examples/mic-in/index.html)
 
 Audio-API combined with particle movement and user media.
 
@@ -52,7 +60,9 @@ Audio-API combined with particle movement and user media.
 
 ###Relief particles - webcam input (`face/`)
 
-![Particle Basics](http://streunerlein.github.com/jsz-threejs/examples/face/preview.jpg)
+![Relief particles](http://streunerlein.github.com/jsz-threejs/examples/face/preview.jpg)
+
+[See live demo](http://streunerlein.github.com/jsz-threejs/examples/face/index.html)
 
 Canvas/Video-API combined with particle coloring and movement, steered by the user's camera input.
 
@@ -60,9 +70,13 @@ Canvas/Video-API combined with particle coloring and movement, steered by the us
 
 ###End scene: Moving Santa
 
-![Particle Basics](http://streunerlein.github.com/jsz-threejs/examples/end/preview.jpg)
+![End scene](http://streunerlein.github.com/jsz-threejs/examples/end/preview.jpg)
 
-Canvas/Video-API combined with particle coloring and movement, steered by the user's camera input.
+[See live demo](http://streunerlein.github.com/jsz-threejs/examples/end/index.html)
+
+Ending scene of the talk. Used in this examples: text rendering, model loading, lightning, grounds, fog, particles, vehicle steering, ... 
+
+I did not do a explanatory readme for this as I don't want to write a huge book. I did also not refactor the code, but wrote it simple in the beginning. So you can still learn from this example by looking at the source code quite well.
 
 **Hint:** Use mouse to look and keyboard (`W`, `A`, `S`, `D`, `Q`, `E`, `R`, `F` and the `arrow` keys) to move around.
 
