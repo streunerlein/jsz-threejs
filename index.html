@@ -65,7 +65,7 @@
             <img src="examples/live-coding-example/preview.jpg" alt="Preview - Live coding example" />
             <h4>Live coding example</h4>
             <a class="" href="https://github.com/streunerlein/jsz-threejs/tree/master/live-coding-example"><span>View on Github</span></a>
-            <a class="" href="examples/live-coding-example/index.html"><span>Open example</span></a>
+            <a class="" href="examples/live-coding-example/test.html"><span>Open example</span></a>
             <div class="clear"></div>
           </div>
 
@@ -123,12 +123,14 @@
       var img = document.querySelectorAll(".example img");
       var links = document.querySelectorAll(".example a[href^='examples/']");
 
-      for (var i = 0, href, go; i < img.length; i++) {
-        href = i < links.length ? links[i].getAttribute('href') : '';
-        go = function() {
-          window.open(href);
-        };
-        img[i].onclick = go;
+      for (var i = 0, go; i < img.length; i++) {
+        (function() {
+          var link = links[i];
+          go = function() {
+            link.click();
+          };
+          img[i].onclick = go;
+        })();
         links[i].setAttribute('target', '_blank');
       }
 
