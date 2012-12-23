@@ -11,6 +11,34 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <title>Jsz-threejs by streunerlein</title>
+    <style type="text/css">
+      .example img {
+        border:5px solid #f2f2f2;
+        box-shadow:4px 4px 10px #a5a5a5;
+        float:left;
+        margin: 0 2em 0 0;
+        width:160px;
+        cursor:pointer;
+      }
+
+      .clear {
+        clear:both;
+      }
+
+      .example {
+        margin:1em 0;
+        padding:1em 0;
+        border-bottom:1px solid #d6d6d6;
+      }
+
+      .example h4 {
+        font-size:120%;
+      }
+
+      .example a {
+        display:block;
+      }
+    </style>
   </head>
 
   <body>
@@ -33,6 +61,54 @@
         <section id="main_content">
           <h3>Examples</h3>
 
+          <div class="example">
+            <img src="examples/live-coding-example/preview.jpg" alt="Preview - Live coding example" />
+            <h4>Live coding example</h4>
+            <a class="" href="https://github.com/streunerlein/jsz-threejs/tree/master/live-coding-example"><span>View on Github</span></a>
+            <a class="" href="examples/live-coding-example/index.html"><span>Open example</span></a>
+            <div class="clear"></div>
+          </div>
+
+          <div class="example">
+            <img src="examples/particles/preview.jpg" alt="Preview - Particles" />
+            <h4>Particles</h4>
+            <a class="" href="https://github.com/streunerlein/jsz-threejs/tree/master/particles"><span>View on Github</span></a>
+            <a class="" href="examples/particles/index.html"><span>Open example</span></a>
+            <div class="clear"></div>
+          </div>
+
+          <div class="example">
+            <img src="examples/sound-in/preview.jpg" alt="Preview - Dancing particles" />
+            <h4>Dancing particle - sound file input</h4>
+            <a class="" href="https://github.com/streunerlein/jsz-threejs/tree/master/sound-in"><span>View on Github</span></a>
+            <a class="" href="examples/sound-in/index.html"><span>Open example</span></a>
+            <div class="clear"></div>
+          </div>
+
+          <div class="example">
+            <img src="examples/mic-in/preview.jpg" alt="Preview - Dancing particles" />
+            <h4>Dancing particle - microphone input</h4>
+            <a class="" href="https://github.com/streunerlein/jsz-threejs/tree/master/mic-in"><span>View on Github</span></a>
+            <a class="" href="examples/mic-in/index.html"><span>Open example</span></a>
+            <div class="clear"></div>
+          </div>
+
+          <div class="example">
+            <img src="examples/face/preview.jpg" alt="Preview - Relief particles" />
+            <h4>Relief particles</h4>
+            <a class="" href="https://github.com/streunerlein/jsz-threejs/tree/master/face"><span>View on Github</span></a>
+            <a class="" href="examples/face/index.html"><span>Open example</span></a>
+            <div class="clear"></div>
+          </div>
+
+          <div class="example">
+            <img src="examples/end/preview.jpg" alt="End scene - Driving Santa" />
+            <h4>End Scene: Driving Santa</h4>
+            <a class="" href="https://github.com/streunerlein/jsz-threejs/tree/master/end"><span>View on Github</span></a>
+            <a class="" href="examples/end/index.html"><span>Open example</span></a>
+            <div class="clear"></div>
+          </div>
+
         </section>
 
         <footer>
@@ -43,5 +119,19 @@
         
       </div>
     </div>
+    <script type="text/javascript">
+      var img = document.querySelectorAll(".example img");
+      var links = document.querySelectorAll(".example a[href^='examples/']");
+
+      for (var i = 0, href, go; i < img.length; i++) {
+        href = i < links.length ? links[i].getAttribute('href') : '';
+        go = function() {
+          window.open(href);
+        };
+        img[i].onclick = go;
+        links[i].setAttribute('target', '_blank');
+      }
+
+    </script>
   </body>
 </html>
