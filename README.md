@@ -5,7 +5,7 @@ This repository holds example code and explanation for the examples shown in the
 As I did all of the examples in the afternoons before the talk, I refactored some of the code to clean it up and make it more understandable (and not to embarrass myself). The code examples are not focussed on performance or elegance in any kind and provided on an as-is basis.
 
  * [JSZurich - Christmas T(h)ree.js on Techup](http://techup.ch/911/jszurich-christmas-t-h-ree-js)
- * [Watch the talk online](http://www.youtube.com/watch?v=Tm0TI9ByUwE)
+ * [Watch the talk online](http://youtu.be/tdk_os2l6zQ)
  * [See all the examples online](http://streunerlein.github.com/jsz-threejs/)
 
 ##Examples
@@ -16,7 +16,7 @@ I've added a readme to every example which explains some of the background shown
 
  * [See all the examples online](http://streunerlein.github.com/jsz-threejs/)
 
-For some of the examples you have to activate `getUserMedia`, means Webcam-access and Microphone-access in your chrome flags (*chrome://flags*). If you cannot see the examples, watch the [recording of the talk](http://www.youtube.com/watch?v=Tm0TI9ByUwE).
+For some of the examples you have to activate `getUserMedia`, means Webcam-access and Microphone-access in your chrome flags (*chrome://flags*). If you cannot see the examples, watch the [recording of the talk](http://youtu.be/tdk_os2l6zQ).
 
 
 ###Live Coding Example (`live-coding-example/`)
