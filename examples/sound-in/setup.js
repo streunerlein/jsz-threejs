@@ -25,7 +25,7 @@ function initSound() {
 
 				source.connect(context.destination);
 				source.connect(analyser);
-				source.noteOn(0);
+				source.play();
 				startaudio();
 			}, function() { console.log(request); });
 		};
