@@ -100,7 +100,7 @@ Is perfectly possible. Make sure you have some kind of server running for that (
 
 Make sure to check out the examples in the examples folder of the Three.js-repository.
 
-###Third-party examples (in order of appereance in the talk)
+###Third-party examples (in order of appearance in the talk)
 
  * http://hexgl.bkcore.com/ Race game
  * http://workshop.chromeexperiments.com/stars/ Solar system
